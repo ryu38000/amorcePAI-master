@@ -1,0 +1,25 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">{{$ctrl.data.nom + ' ' + $ctrl.data.prenom}}</span>
+            <span class="md-subhead">Sexe : {{$ctrl.data.sexe}}</span>
+            <span class="md-subhead">Date de naissance : {{$ctrl.data.naissance}}</span>
+            <span class="md-subhead">numero : {{$ctrl.data.numero}}</span>
+            <span class="md-subhead"> Adresse complète :
+                 <span class="md-subhead">{{$ctrl.data.adresse.rue}}</span>
+                 <span class="md-subhead">{{$ctrl.data.adresse.ville}}</span>
+                 <span class="md-subhead">{{$ctrl.data.adresse.codePostal}}</span>
+                 <span class="md-subhead">{{$ctrl.data.adresse.numero}}</span>
+                 <span class="md-subhead"> étage : {{$ctrl.data.adresse.etage}}</span>
+            </span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+    <form name="myForm">
+        <md-button ng-click="$ctrl.deletePatient($ctrl.data)">Supprimer</md-button>
+    </form>
+    </md-card-actions>
+</md-card>
+

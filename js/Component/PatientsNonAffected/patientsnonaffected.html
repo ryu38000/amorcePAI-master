@@ -1,0 +1,50 @@
+        
+<md-toolbar class="md-hue-2">
+  <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+      <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+    </md-button>
+    <h2><span>{{$ctrl.data.nom + ' ' + $ctrl.data.prenom}}</span></h2>
+    <span flex></span>
+    <md-button class="md-icon-button" aria-label="Favorite">
+      <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="More">
+      <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+    </md-button>
+  </div>
+</md-toolbar>
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-subhead">Sexe : {{$ctrl.data.sexe}}</span>
+            <span class="md-subhead">Date de naissance : {{$ctrl.data.naissance}}</span>
+            <span class="md-subhead">numero : {{$ctrl.data.numero}}</span>
+            <span class="md-subhead"> Adresse complète :
+                 <span class="md-subhead">{{$ctrl.data.adresse.rue}}</span>
+                 <span class="md-subhead">{{$ctrl.data.adresse.ville}}</span>
+                 <span class="md-subhead">{{$ctrl.data.adresse.codePostal}}</span>
+                 <span class="md-subhead">{{$ctrl.data.adresse.numero}}</span>
+                 <span class="md-subhead"> étage : {{$ctrl.data.adresse.etage}}</span>
+          </span>
+  <div layout="column" layout-align="center center" style="min-height: 20px;" ng-cloak="">
+  <form name="myForm">
+    <md-input-container class="md-block">
+      <label>Infirmier</label>
+      <md-select name="myModel" ng-model="$ctrl.affect" required="">
+        <md-option ng-repeat="i in $ctrl.inf" value="{{i.id}}">{{i.name}}</md-option>
+      </md-select>
+    </md-input-container>
+    <div layout="row">
+      <md-button ng-click="$ctrl.save($ctrl.data.numero)" class="md-primary" layout="" layout-align="center end">Save</md-button>
+    </div>
+  </form>
+</div>
+
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="$ctrl.deletePatient($ctrl.data)">Supprimer</md-button>
+    </md-card-actions>
+</md-card>
+

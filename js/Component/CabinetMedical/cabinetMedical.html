@@ -1,0 +1,110 @@
+<!-- <div>
+    <h1>{{$ctrl.informations.name}}</h1>
+ <md-toolbar class="md-theme-indigo">
+    <md-menu-bar>
+             <md-menu>
+                <md-button ng-click="$ctrl.showContent('Infirmier')" aria-label="Open sample menu" class="md-primary">
+                 Infirmiers
+                </md-button>
+                <md-button ng-click="$ctrl.showContent('PatientsAffectes')"  aria-label="Open sample menu" class="md-primary">
+                 Patients Affectés
+                </md-button>-->
+                <!-- <md-button ng-click="$ctrl.showContent('PatientsNonAffectes')" aria-label="Open sample menu" class="md-primary">
+                 Patients Non Affectés
+                </md-button>   
+                <md-button ng-click="$ctrl.showContent('AjouterPatients')" aria-label="Open sample menu" class="md-primary">
+                 Ajouter patients
+                </md-button>                              
+                <md-menu-content>
+            </md-menu>
+    </md-menu-bar>
+</md-toolbar>  -->
+
+<div ng-cloak="">
+</div>
+<div layout="column">
+  <md-card>
+    <md-card-title class="mdcard">
+      <md-card-title-text>
+        <h2>{{$ctrl.informations.name}}</h2>
+         <md-switch class="md-primary" ng-click="$ctrl.showInfo()" layout-align="left">
+         Watch information
+         </md-switch>
+         <md-card ng-show="$ctrl.infoS">
+         {{$ctrl.infoS}}
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-subhead"><h2>Adresse du cabinet</h2></span>
+                <span class="md-subhead">{{$ctrl.informations.adresse.numero}} {{$ctrl.informations.adresse.rue}} {{$ctrl.informations.adresse.numero}} {{$ctrl.informations.adresse.ville}} {{$ctrl.informations.adresse.cp}}</span>
+              </md-card-title-text>
+              <md-card-title-media>
+                <div class="md-media-lg card-media"></div>
+              </md-card-title-media>
+            </md-card-title>
+      </md-card>
+      </md-card-title-text>
+      <md-card-title-media>
+        <div class="md-media-sm card-media"></div>
+      </md-card-title-media>
+    </md-card-title>
+  </md-card>
+</div>
+<div ng-cloak="">
+  <md-content>
+    <md-tabs md-dynamic-height="" md-border-bottom="">
+      <md-tab label="Infirmier">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Infirmier</h1>
+                <!--<div ng-show="$ctrl.MenuElement.Infirmier">-->
+          <div>
+              <div  ng-repeat="inf in $ctrl.infirmiers">
+                  <infirmiers data="inf"></infirmiers>
+              </div>
+          </div>
+        </md-content>
+      </md-tab>
+      <md-tab label="Patients non affectés">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Patients non affectés</h1>
+<!--               <div ng-show="$ctrl.MenuElement.PatientsNonAffectes">
+ -->                <div>
+                        <div  ng-repeat="pat in $ctrl.patients">
+                    <patientsnonaffected data="pat" inf="$ctrl.infirmiers"></patientsnonaffected>
+                </div>
+            </div>
+        </md-content>
+      </md-tab>
+      <md-tab label="Ajout d'un nouveau patient">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Ajout d'un nouveau patient</h1>
+               <!-- <div ng-show="$ctrl.MenuElement.AjouterPatients"> -->
+                <div>
+                    <patienttoadd></patienttoadd>
+                </div>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>
+
+
+
+
+    
+
+
+<!--     <div ng-show="$ctrl.MenuElement.PatientsAffectes">
+    <h2>Liste des patients en charge</h2>
+        <div  ng-repeat="inf in $ctrl.infirmiers">
+
+            <div ng-repeat="pat in inf.patients">
+                <patient data="pat"></patient>
+            </div>
+        </div>
+    </div> 
+</div>-->
+
+ 
+
+
+

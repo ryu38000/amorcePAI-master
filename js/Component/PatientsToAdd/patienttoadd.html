@@ -1,0 +1,57 @@
+<div  class="row">
+    <div class="col-xs-6"> 
+        <div class="page-header">
+        </div>
+        <form ng-submit="$ctrl.addPatient()" name="formu" layout="column" ng-cloak class="md-inline-form">
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                       <input ng-model="$ctrl.identifiants.name" name="prenom" type="text" required ng-minlength="2" ng-maxlength="20" placeholder="Prénom" />
+                    <div ng-messages="myForm.required.$error" ng-messages-include="erreurs.html"></div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                        <input ng-model="$ctrl.identifiants.firstname" name="nom" type="text" ng-maxlength="30" required placeholder="Nom">
+                        <div ng-messages="formu.required.$error" name="nom" ng-messages-include="erreurs.html" ng-if="myForm.$submitted"></div>
+                </md-input-container>
+            </div>
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                        <label>Sexe</label>
+                        <md-select ng-model="$ctrl.identifiants.gender">
+                            <md-option name="gender"  value="h"> Homme
+                            </md-option>
+                             <md-option name="gender"  value="f"> Femme
+                            </md-option>
+                        </md-select>
+                </md-input-container>
+                <md-datepicker ng-model="$ctrl.identifiants.birthdate" name="birthdate" md-placeholder="Enter date" required>
+                </md-datepicker>
+            </div>
+            <md-input-container class="md-block">
+                <input ng-model="$ctrl.identifiants.adressStreet" name="adressStreet" type="text" placeholder="Rue" required>
+                <div ng-messages="formu.number.$error" ng-messages-include="erreurs.html" ng-if="myForm.$submitted"></div>
+            </md-input-container>
+            <md-input-container md-no-float class="md-block">
+                <input ng-model="$ctrl.identifiants.adressPostcode" name="adressPostcode" type="number" min="0" placeholder="Code postal" required>
+                <div ng-messages="formu.number.$error" ng-messages-include="erreurs.html" ng-if="myForm.$submitted"></div>
+            </md-input-container>
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <input ng-model="$ctrl.identifiants.adressCity" name="adressCity" type="text" placeholder="Ville" required>
+                    <div ng-messages="formu.number.$error" ng-messages-include="erreurs.html" ng-if="myForm.$submitted"></div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>                
+                    <input ng-model="$ctrl.identifiants.number" name="number" type="number" min="0" placeholder="Numéro du patient" required>
+                    <div ng-messages="formu.number.$error" ng-messages-include="erreurs.html" ng-if="myForm.$submitted"></div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <input ng-model="$ctrl.identifiants.adressFloor" name="adressFloor" type="number" min="0" placeholder="Etage" required>
+                    <div ng-messages="formu.number.$error" ng-messages-include="erreurs.html" ng-if="myForm.$submitted"></div> 
+                </md-input-container>
+            </div>                     
+            <md-button type="submit" class="md-raised"> Ajouter </md-button>
+        </form>
+    </div>
+</div>
+
+       
+  

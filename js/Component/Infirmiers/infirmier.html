@@ -1,0 +1,31 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">{{$ctrl.data.name + ' ' + $ctrl.data.surname}}</span>
+            <span class="md-subhead">Identifiant:{{$ctrl.data.id}}</span>
+        </md-card-title-text>
+        <md-card-title-media>
+            <div class="md-media-sm card-media">
+                <img ng-src="{{$ctrl.data.photo}}" 
+                     alt ="Photo de {{$ctrl.data.name + ' ' + $ctrl.data.surname}}"/>
+            </div>
+        </md-card-title-media>
+    </md-card-title>
+    <md-card-content>
+        <!--{{$ctrl}}-->
+        <h2>Patients Affectés</h2>
+
+<div layout="column" ng-cloak="">
+  <md-content class="md-padding">
+    <md-tabs md-selected="selectedIndex" md-border-bottom="" md-autoselect="">
+      <md-tab ng-repeat="p in $ctrl.data.patients" label="{{p.nom}}">
+        <div class="demo-tab" style="text-align: center;">
+          <patient data="p"></patient>
+          <md-button class="md-primary md-warn" ng-click="removeTab( tab )">Supprimer</md-button>
+        </div>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>
+    </md-card-content>
+</md-card>
